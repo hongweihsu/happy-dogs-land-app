@@ -10,7 +10,7 @@ let supportFile = ["jpg", "jpeg", "png", "gif", "mp4"];
 const HomePage = () => {
   let [data, setData] = useState([]);
   const apiURL = "https://random.dog/woof.json";
-
+  // request api
   const search = async () => {
     try {
       let temp = [];
@@ -34,7 +34,7 @@ const HomePage = () => {
       console.log(e);
     }
   };
-
+  // do search when loading page
   useEffect(() => {
     search();
   }, []);

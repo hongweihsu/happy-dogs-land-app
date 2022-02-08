@@ -1,3 +1,7 @@
+# App Description
+
+This app generate a set of eight dog pictures when the "Search New Dogs" button is clicked by uses. This button requests the random.dog/woof.json api eight times to gain enough materials that used to render the main page which supports rendering jpg, jpeg, png, gif and mp4 format.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
