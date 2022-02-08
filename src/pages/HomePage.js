@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Search from "../components/Search";
 import Picture from "../components/Picture";
+import Video from "../components/Video";
 import { v4 as uuidv4 } from "uuid";
 
+let condition = 8;
+
 const HomePage = () => {
-  let condition = 8;
-  let temp = [];
-  let supportFile = ["jpg", "jpeg", "png", "gif"];
+  let supportFile = ["jpg", "jpeg", "png", "gif", "mp4"];
   let [data, setData] = useState([]);
-  let [currentData, setCurrentData] = useState([]);
   const apiURL = "https://random.dog/woof.json";
 
   const search = async () => {
-    // setData([]);
+    let temp = [];
     while (temp.length < condition) {
       const dataFetch = await fetch(apiURL, {
         method: "GET",
@@ -20,7 +20,6 @@ const HomePage = () => {
       });
       let parsedData = await dataFetch.json();
       let url = parsedData.url;
-
       supportFile.forEach((element) => {
         if (url.toString().includes(element)) {
           console.log(url);
@@ -29,8 +28,6 @@ const HomePage = () => {
       });
     }
     setData(temp);
-    console.log("dataArr");
-    console.log(temp);
   };
 
   useEffect(() => {
@@ -44,8 +41,11 @@ const HomePage = () => {
       <div className="pictures">
         {data &&
           data.map((d) => {
-            console.log("dataMap");
-            return <Picture url={d.url} key={d.id} />;
+            if (d.url.includes("mp4")) {
+              return <Video url={d.url} key={d.id} />;
+            } else {
+              return <Picture url={d.url} key={d.id} />;
+            }
           })}
       </div>
     </div>

@@ -74,7 +74,8 @@ button {
   height: 45vh;
 }
 
-.pictures .picture .imageContainer img {
+.pictures .picture .imageContainer img,
+.pictures .picture .imageContainer video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -83,7 +84,8 @@ button {
   transition: all 0.3s ease;
 }
 
-.pictures .picture .imageContainer img:hover {
+.pictures .picture .imageContainer img:hover,
+.pictures .picture .imageContainer video:hover {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
 }
