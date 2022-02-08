@@ -5,9 +5,9 @@ import Video from "../components/Video";
 import { v4 as uuidv4 } from "uuid";
 
 let condition = 8;
+let supportFile = ["jpg", "jpeg", "png", "gif", "mp4"];
 
 const HomePage = () => {
-  let supportFile = ["jpg", "jpeg", "png", "gif", "mp4"];
   let [data, setData] = useState([]);
   const apiURL = "https://random.dog/woof.json";
 
