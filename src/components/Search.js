@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const Search = ({search}) => {
-  return <div className = "search">
+const Search = ({ search }) => {
+  return (
+    <div className="search" data-testid="button">
       <button onClick={search}>Search New Dogs</button>
-  </div>;
+    </div>
+  );
 };
 
 export default Search;

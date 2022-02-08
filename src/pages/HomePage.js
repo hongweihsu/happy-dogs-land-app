@@ -12,22 +12,27 @@ const HomePage = () => {
   const apiURL = "https://random.dog/woof.json";
 
   const search = async () => {
-    let temp = [];
-    while (temp.length < condition) {
-      const dataFetch = await fetch(apiURL, {
-        method: "GET",
-        headers: { Accept: "application/json" },
-      });
-      let parsedData = await dataFetch.json();
-      let url = parsedData.url;
-      supportFile.forEach((element) => {
-        if (url.toString().includes(element)) {
-          console.log(url);
-          temp.push({ url, id: uuidv4() });
-        }
-      });
+    try {
+      let temp = [];
+      while (temp.length < condition) {
+        const dataFetch = await fetch(apiURL, {
+          method: "GET",
+          headers: { Accept: "application/json" },
+        });
+        let parsedData = await dataFetch.json();
+        let url = parsedData.url;
+        supportFile.forEach((element) => {
+          if (url.toString().includes(element)) {
+            console.log(url);
+            temp.push({ url, id: uuidv4() });
+          }
+        });
+      }
+      setData(temp);
+    } catch (e) {
+      console.log("search function error: ");
+      console.log(e);
     }
-    setData(temp);
   };
 
   useEffect(() => {

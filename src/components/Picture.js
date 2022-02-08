@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
 const Picture = (data) => {
-    // console.log("dataPicture");
-    // console.log(data);
-  return <div className="picture">
+  return (
+    <div className="picture">
       <div className="imageContainer">
-        <img src= {data.url} alt="" />
+        <img src={data.url} alt="" />
       </div>
-  </div>;
+    </div>
+  );
 };
 
 export default Picture;
