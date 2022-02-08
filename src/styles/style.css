@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  padding: 2px;
+  text-align: center;
+  margin: 10px;
+}
+
+button {
+  padding: 3px 6px;
+  display: block;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pictures {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pictures .picture {
+  padding: 1rem;
+  width: 25%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .pictures .picture {
+    width: 33%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .pictures .picture {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .pictures .picture {
+    width: 100%;
+  }
+}
+
+.pictures .picture .imageContainer {
+  overflow: hidden;
+  height: 45vh;
+}
+
+.pictures .picture .imageContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.pictures .picture .imageContainer img:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+/*# sourceMappingURL=style.css.map */
